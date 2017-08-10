@@ -1,0 +1,35 @@
+
+<?php 
+
+include "database.php";
+
+if(isset($_POST['category'])) {
+	$cat_query = "SELECT * FROM categories";
+	$query = mysqli_query($con,$cat_query);
+
+	echo '
+<div class="nav nav-pills nav-stacked">
+
+	<li class="active">
+		<a href="#"><h4>Categories</h4></a>
+	</li>;
+	';
+
+	if(mysqli_num_rows($query)>0){
+
+
+
+
+
+		while($row = mysqli_fetch_array($query)){
+			$cat_id = $row['cat_id'];
+			$cat_name = $row['cat_title'];
+			echo "<li><a href='#'>".$cat_name.'</a></li>'
+
+		}
+		echo "</div>";
+	}
+}
+
+ ?>
+ <?php  ?>
