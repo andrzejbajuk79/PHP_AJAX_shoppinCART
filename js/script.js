@@ -88,7 +88,24 @@ $('#search_btn').click(function() {
 	});
 
 	};
-})
+});
+
+
+
+$('#signup_button').click(function(e) {
+	e.preventDefault();
+			$.ajax({
+		url			:'helpers/register.php',
+		method		:'post',
+		data 		: $('form').serialize(),
+		success 	: function(data) {
+						$('#signup-msg').html(data);
+						
+						}
+
+	});
+
+});
 
 
 	

@@ -28,19 +28,19 @@ if(isset($_POST['get_selected_Category']) || isset($_POST['selectedBrand']) || i
 			$product5 = $row['product_price'] ;
 			$product6 = $row['product_image'] ;
 			echo " 
-			<div class='col-md-4' style='overflow:auto'>
-				<div class='panel panel-info ' style='height:250px;'>
-					<div class='panel-heading'>$product4</div>
-						<div class='panel-body' style='height:80%'>
+			<div class='col-md-4'>
+					<div class='panel panel-info ' style='height:270px;'>
+						<div class='panel-heading' style='height:15%;'>$product4</div>
+						<div class='panel-body' style='height:70%'>
 							<img src='$product6' style='width:150px; height:80%'>
-							$product4
-						</div>
-					<div class='panel-footer ' >$ $product5
-						<button  pid='$product1' style='float:right' class='btn btn-danger btn-xs $product2'>Add</button>
-					</div>
-				</div>
-			</div>
 
+						</div>
+						<div class='panel-heading' style='width:100%; height:15%;'>$product5
+						<button  pid='$product1' style='float:right' class='btn btn-danger btn-xs $product1'>Add</button>
+						</div>
+					</div>
+
+				</div>
 
 			";
 
