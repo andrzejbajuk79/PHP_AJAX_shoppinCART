@@ -1,6 +1,6 @@
 
 
-
+<?php session_start(); ?>
 <?php include "helpers/action.php";?>
 <?php include "layout/header.php";?>
 	<p><br></p><p><br></p><p><br></p>

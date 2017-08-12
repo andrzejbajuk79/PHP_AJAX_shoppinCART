@@ -1,3 +1,8 @@
+
+<?php  
+include "helpers/database.php";
+session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -42,30 +47,28 @@
                 </div>
               </div>
             </li>
-            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> Sign in</span></a>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['name']; ?></span></a>
               <ul class="dropdown-menu">
-                <div style="width: 300px;">
-                  <div class="panel panel-primary">
-                    <div class="panel-heading">
-                      <h3 class="panel-title">Login</h3>
-                    </div>
-                    <div class="panel-heading">
-                      <label for="email">Email</label>
-                      <input type="email" class="form-control" id="email" required="" name="">
-                      <label for email> Password</label>
-                      <input type="password" class="form-control" id="password" required="" name="">
-                    
-                    
-                    <a href="#" style="color:white;list-style: none">forgotten password</a>
-                    <button type="submit" class="btn btn-success" id="login" style="float:right" value="Login">Login</button></div>
-                   
-                  </div>
-
-                </div>
+              
               </ul>
-            </li>
-            <li><a href="#"><span class="glyphicon glyphicon-user"> Sign out</span></a></li>
+            </li>          
            
           </ul>   
       </div>
     </nav>
+	<p><br></p><p><br></p><p><br></p>
+
+
+	<div class="container">
+		<div class="row">
+			<?php include "layout/sidebar.php";?>
+			<?php include "layout/main.php";?>
+		</div> <!-- /row -->
+	</div><!-- /.container -->
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+     <script src="js/script.js"></script>
+
+    
+  </body>
+</html>

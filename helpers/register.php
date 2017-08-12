@@ -29,11 +29,21 @@ if(empty($data1) || empty($data2) || empty($data3) || empty($data4) || empty($da
 	';
 }else {
 if(!preg_match($name,$data1)) {
-	echo "$data1 is not valid";
+	echo '   <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert"  aria-label="close" >&times</a><b>
+                 $data1 is not valid
+                 </b>
+                
+              </div>';
 	exit();
 }
 if(!preg_match($name,$data2)) {
-	echo "$data2 is not valid";
+	echo '   <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert"  aria-label="close" >&times</a><b>
+                 $data2 is not valid
+                 </b>
+                
+              </div>';
 	exit();
 }
 
@@ -42,7 +52,7 @@ if(!preg_match($emailVal,$data3)) {
 	echo "$data3 is not valid";
 	exit();
 }
-if(strlen($data4 <4)) {
+if(strlen($data4 < 4)) {
 	echo "jest za slabe";
 	exit();
 }
@@ -54,10 +64,11 @@ if(!preg_match($number,$data6)) {
 	echo "numer telefonu $data6 nie jest prawidlowy";
 	exit();
 }
-if(!strlen($data6 != 6)){
-echo "numer telefonu powininien zawierac 6 znakow";
-exit();
+if(!strlen($data6 = 6)) {
+	echo "numer telfonu ma miec 4 cyfry";
+	exit();
 }
+
 
 //check exist email in database
 $query = "SELECT user_id FROM user_info WHERE email ='$data3' LIMIT 1";
@@ -74,7 +85,7 @@ $sql =" INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, 
 $run_query = mysqli_query($con,$sql);
 
 if($run_query) {
-	echo "you are registerd succesfuly";
+	echo "you are registerd";
 }
 
 }

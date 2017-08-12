@@ -107,6 +107,24 @@ $('#signup_button').click(function(e) {
 
 });
 
+$('#login').click(function(e){
+e.preventDefault();
+var email = $('#email').val();
+var pass = $('#password').val();
+
+
+$.ajax({
+url			:	'helpers/login.php',
+method		: 'post',
+data 		: {userLogin :1, userEmail :email, userPassword : pass},
+success		: function(data){
+if(data == "ala ma kota i psa"){
+ 		window.location.href = 'profile.php';
+}
+ 
+}
+});
+});
 
 	
 });
