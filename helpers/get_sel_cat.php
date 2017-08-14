@@ -36,7 +36,7 @@ if(isset($_POST['get_selected_Category']) || isset($_POST['selectedBrand']) || i
 
 						</div>
 						<div class='panel-heading' style='width:100%; height:15%;'>$product5
-						<button  pid='$product1' style='float:right' class='btn btn-danger btn-xs $product1'>Add</button>
+						<button  id='product' pid='$product1' style='float:right' class='btn btn-danger btn-xs $product1'>Add to Cart</button>
 						</div>
 					</div>
 

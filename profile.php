@@ -1,7 +1,17 @@
 
+<?php session_start();  ?>
 <?php  
-include "helpers/database.php";
-session_start(); ?>
+include "helpers/action.php";
+
+if(!isset($_SESSION['uid'])) {
+  header("location:index.php");
+}
+
+?>
+<?php include "helpers/action.php";?>
+
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,24 +57,28 @@ session_start(); ?>
                 </div>
               </div>
             </li>
-            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> <?php echo $_SESSION['name']; ?></span></a>
+            <li><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-user"> <?=$_SESSION['name']; ?></span></a>
               <ul class="dropdown-menu">
-              
+              <li><a href="#" style="text-decoration: none;color: blue"><span class="glyphicon glyphicon-shopping-cart"> Cart</span></a></li>
+              <li class="divider"></li>
+              <li><a style="text-decoration: none;color: blue" href="#"> Change  Password</a></li>
+               <li class="divider"></li>
+              <li><a style="text-decoration: none;color: blue" href="helpers/logout.php"> LOGOUT</a></li>
               </ul>
             </li>          
            
           </ul>   
       </div>
     </nav>
-	<p><br></p><p><br></p><p><br></p>
+  <p><br></p><p><br></p><p><br></p>
 
 
-	<div class="container">
-		<div class="row">
-			<?php include "layout/sidebar.php";?>
-			<?php include "layout/main.php";?>
-		</div> <!-- /row -->
-	</div><!-- /.container -->
+  <div class="container">
+    <div class="row">
+      <?php include "layout/sidebar.php";?>
+      <?php include "layout/main.php";?>
+    </div> <!-- /row -->
+  </div><!-- /.container -->
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="js/bootstrap.js"></script>
      <script src="js/script.js"></script>

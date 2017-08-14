@@ -62,7 +62,7 @@ $('body').delegate ('.sel_brand','click',function(e){
 	var bid = $(this).attr('bid');
 	// alert(bid);
 	$.ajax({
-		url			:'helpers/action.php',
+		url			:'helpers/add_prod_to_cart.php.php',
 		method		:'post',
 		data 		: {selectedBrand :1,brand_id :bid },
 		success 	: function(data) {
@@ -124,6 +124,21 @@ if(data == "ala ma kota i psa"){
  
 }
 });
+});
+$('body').delegate('#product','click',function(e) {
+	e.preventDefault();
+	var p_id = $(this).attr('pid');
+
+	$.ajax({
+		url : "helpers/action.php",
+		method		: 'post',
+		data 		: {addToProduct:1,prodId:p_id},
+		success 	: function(data){
+			alert(data);
+		}
+
+
+	});
 });
 
 	

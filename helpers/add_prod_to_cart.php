@@ -1,12 +1,9 @@
-
 <?php 
-session_start();
+
 include "database.php";
 
-include "brand.php";
-include "product.php";
-include "category.php";
-include "get_sel_cat.php";
+
+
 if(isset($_POST['addToProduct'])) {
 	$p_id = $_POST['prodId'];
 	$user_id = $_SESSION['uid'];
@@ -31,7 +28,3 @@ if(isset($_POST['addToProduct'])) {
 	}
 
  }
-
-
- ?>
-
